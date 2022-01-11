@@ -1,0 +1,18 @@
+diff --git a/vendor/magento/framework/Image/Adapter/Gd2.php b/vendor/magento/framework/Image/Adapter/Gd2.php
+index 5eb663c5..61ed3db0 100644
+--- a/vendor/magento/framework/Image/Adapter/Gd2.php
++++ b/vendor/magento/framework/Image/Adapter/Gd2.php
+@@ -95,11 +95,13 @@ class Gd2 extends \Magento\Framework\Image\Adapter\AbstractAdapter
+      */
+     private function validateURLScheme(string $filename) : bool
+     {
++        if(!file_exists($filename)) { // if file not exist
+         $allowed_schemes = ['ftp', 'ftps', 'http', 'https'];
+         $url = parse_url($filename);
+         if ($url && isset($url['scheme']) && !in_array($url['scheme'], $allowed_schemes)) {
+             return false;
+         }
++        }
+ 
+         return true;
+     }
