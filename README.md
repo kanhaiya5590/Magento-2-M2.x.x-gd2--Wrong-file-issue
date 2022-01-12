@@ -1,3 +1,5 @@
+**Tested with Magento v2.3.x till Magento 2.4.3-p1**
+
 # Magento 2 Gd2 Wrong file in Window
 In PatchApplier.php line 170:  Unable to apply data patch `Magento\Theme\Setup\Patch\Data\RegisterThemes` for module `Magento_Theme`. Original exception message: Wrong file   
 
